@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render,redirect,HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 from django.core.paginator import Paginator
@@ -118,7 +119,7 @@ def view_tickets(request,user_id,movie_id, showtime,date_event):
 
             # Attach the QR code to the email
             email.attach("booking_qr.png", qr_img_data, "image/png")
-
+            os.remove('myqr.png')
             try:
                 email.send()
                 # Add a success message
