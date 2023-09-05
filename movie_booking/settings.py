@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'movie_booking.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movie_bookings',
-        'USER': 'root',
-        'PASSWORD': 'mysqlpass',
-        'HOST': 'localhost',  # Or your MySQL server IP address
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
