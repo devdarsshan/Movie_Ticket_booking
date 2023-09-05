@@ -1,0 +1,54 @@
+{% extends 'bookings/main.html' %}
+{% block content %}
+
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">BOOKING DETAILS</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Movie Name</th>
+                                <th>Show Date</th>
+                                <th>Showtime</th>
+                                <th>Booked Seats</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for customer in bookings %}
+                            <tr>
+                                <td>{{ customer.booking_date }}</td>
+                                <td>{{ customer.movie }}</td>
+                                <td>{{ customer.booked_date }}</td>
+                                <td>
+                                    {% if customer.showtime == 1 %}
+                                        10 AM
+                                    {% elif customer.showtime == 2 %}
+                                        2 PM
+                                    {% elif customer.showtime == 3 %}
+                                        6 PM
+                                    {% elif customer.showtime == 4 %}
+                                        10 PM
+                                    {% else %}
+                                        Unknown
+                                    {% endif %}
+                                </td>
+                                <td>{{ customer.booked_seats }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

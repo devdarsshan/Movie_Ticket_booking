@@ -1,0 +1,13 @@
+{% extends 'bookings/mainpg.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.password }}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

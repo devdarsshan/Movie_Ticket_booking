@@ -1,0 +1,124 @@
+{% extends 'bookings/main.html' %}
+{% load static %}
+
+{% block title %}
+<title>BoxOffice | Home</title>
+{% endblock %}
+
+{% block content %}
+{% if messages %}
+<div class="container">
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<link rel="stylesheet" href="{% static 'bookings/css/main.css' %}">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="s1" style="margin-left: 50px;">
+                <img src="{% static 'images/1.jpg' %}" alt="IMAGE-1" style="height: 600px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="s2">
+                <img src="{% static 'images/2.jpg' %}" alt="IMAGE-1" style="height: 600px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+        
+        <div class="carousel-item">
+            <div class="s4" style="margin-left: 50px;">
+                <img src="{% static 'images/4.jpg' %}" alt="IMAGE-1" style="height: 600px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="s5" style="margin-left: 50px;">
+                <img src="{% static 'images/5.jpg' %}" alt="IMAGE-1" style="height: 600px; width: 100%; object-fit: cover;">
+            </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-10 offset-2 m-5">
+                    <h1>Now Showcasing</h1>
+                </div>
+            </div>
+            <div class="row">
+                {% for movie in page %}
+                <div class="col-12 col-md-6 col-lg-4 mb-5">
+                    
+                        <div class="card shadow" style="width: 18rem; margin:0px auto;">
+                            <img src="/static/images/poster.jpg" class="card-img-top" height="380px">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">{{ movie.Movie_name }}</h4>
+                                <a class="btn btn-block btn-outline-success" href="{% url 'show_timings' user_id movie.id %}">Book now</a>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                <div class="pagination center" style="text-align: center; margin-top: 20px;">
+                    <span class="step-links">
+                        {% if page.has_previous %}
+                        <a href="?page=1" class="pagination-link">&laquo; First</a>
+                        <a href="?page={{ page.previous_page_number }}" class="pagination-link">Previous</a>
+                        {% endif %}
+                
+                        
+                
+                        {% if page.has_next %}
+                        <a href="?page={{ page.next_page_number }}" class="pagination-link">Next</a>
+                        <a href="?page={{ page.paginator.num_pages }}" class="pagination-link">Last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+<!-- 
+<body>
+    <h1>Movies List</h1>
+    
+    <h2>Welcome, User ID: {{ user_id }}</h2>
+    
+    <div class="movies">
+        {% for movie in movies %}
+        <div class="card">
+            <h2>{{ movie.Movie_name }}</h2>
+            <div class="theater-details">
+                <p>Theatre Name: {{ movie.Theatre_name }}</p>
+                <p>Theatre Location: {{ movie.Theatre_location }}</p>
+            </div>
+            <div class="release-date">
+                <p>Release Date: {{ movie.Release_date|date:"F j, Y" }}</p>
+            </div> <button>VIEW SHOWS</button>
+        </div>
+        {% endfor %}
+    </div>
+</body> -->
+

@@ -1,0 +1,67 @@
+{% extends 'bookings/main.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies List</title>
+</head>
+
+<body>
+    <h1>Movies List</h1>
+    
+    <h2>Welcome, User ID: {{ user_id }}</h2>
+    
+    <div class="movies">
+        {% for movie in movies %}
+        <div class="card">
+            <h2>{{ movie.Movie_name }}</h2>
+            <div class="theater-details">
+                <p>Theatre Name: {{ movie.Theatre_name }}</p>
+                <p>Theatre Location: {{ movie.Theatre_location }}</p>
+            </div>
+            <div class="release-date">
+                <p>Release Date: {{ movie.Release_date|date:"F j, Y" }}</p>
+            </div>
+            <!-- List the four shows for each movie -->
+            <ul>
+                <li><a href="{% url 'view_tickets' movie_id=movie.id showtime=1 %}">Show at 10 AM</a></li>
+                <li><a href="{% url 'view_tickets' movie_id=movie.id showtime=2 %}">Show at 2 PM</a></li>
+                <li><a href="{% url 'view_tickets' movie_id=movie.id showtime=3 %}">Show at 6 PM</a></li>
+                <li><a href="{% url 'view_tickets' movie_id=movie.id showtime=4 %}">Show at 10 PM</a></li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+
+
+<!-- 
+<body>
+    <h1>Movies List</h1>
+    
+    <h2>Welcome, User ID: {{ user_id }}</h2>
+    
+    <div class="movies">
+        {% for movie in movies %}
+        <div class="card">
+            <h2>{{ movie.Movie_name }}</h2>
+            <div class="theater-details">
+                <p>Theatre Name: {{ movie.Theatre_name }}</p>
+                <p>Theatre Location: {{ movie.Theatre_location }}</p>
+            </div>
+            <div class="release-date">
+                <p>Release Date: {{ movie.Release_date|date:"F j, Y" }}</p>
+            </div> <button>VIEW SHOWS</button>
+        </div>
+        {% endfor %}
+    </div>
+</body> -->
+
+
+</html>
+
+
+{% endblock %}

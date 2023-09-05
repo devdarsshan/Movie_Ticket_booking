@@ -1,0 +1,38 @@
+{% extends 'bookings/main.html' %}
+{% load static %}
+
+{% block title %}
+<title>Show Details and Timings</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Show Details and Timings</h2>
+    <br>
+    <h3>Location : {{ movie.Theatre_location }} </h3>
+    
+    <div class="row">
+        {% for date in dates %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ date|date:"F d" }}</h5>
+                    {% with formatted_date=date.date|date:"Y-m-d" %}
+                    <ul class="list-group">
+                        <a class="btn btn-outline-success" href="{% url 'view_tickets' user_id=user_id movie_id=movie.id showtime=1 date_event=formatted_date %}">10 AM</a>
+                        <br>
+                        <a class="btn btn-outline-success" href="{% url 'view_tickets' user_id=user_id movie_id=movie.id showtime=2 date_event=formatted_date %}">2 PM</a>
+                        <br>
+                        <a class="btn btn-outline-success" href="{% url 'view_tickets' user_id=user_id movie_id=movie.id showtime=3 date_event=formatted_date %}">6 PM</a>
+                        <br>
+                        <a class="btn btn-outline-success" href="{% url 'view_tickets' user_id=user_id movie_id=movie.id showtime=4 date_event=formatted_date %}">10 PM</a>
+            
+                    </ul>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

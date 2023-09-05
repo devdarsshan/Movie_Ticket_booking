@@ -1,0 +1,37 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="row" >
+        {% for product in products %}
+            <div class="col-lg-4">
+                <div class="box-element product">
+                    <img style = "width: 200px; height: 250px;" class="thumbnail" src="/static/images/rcinema.png">
+                    <h6><center><strong>{{product.name}}</strong></center></h6>
+                    <hr>
+                    <img class='movie-details' src="static/images/video-camera.png" alt="Theatre name"> 
+                    <p>Theatre name</p>
+                    <img class='movie-details' src="static/images/location.png" alt="Location"> 
+                    <p>Location</p>
+                    <img class='movie-details' src="static/images/calendar.png" alt="Calendar"> 
+                    <p>Release Date</p>
+                    <a style = "display: flex; justify-content: center; align-items: center;" class="btn btn-outline-success" href="#">Book now</a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="pagination center">
+            <span class="step-links">
+                {% if page.has_previous %}
+                    <a href="?page=1">&laquo; First</a>
+                    <a href="?page={{ page.previous_page_number }}">Previous</a>
+                {% endif %}
+                
+                {% if page.has_next %}
+                    <a href="?page={{ page.next_page_number }}">Next</a>
+                    <a href="?page={{ page.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>     
+    </div>
+{% endblock content %}
+
