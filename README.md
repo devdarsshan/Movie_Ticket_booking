@@ -3,6 +3,10 @@
 This project implements a Movie Ticket Booking System, allowing users to browse movies, view showtimes, select seats, and make bookings. Users will receive email confirmations with QR codes for their bookings, and they can scan these QR codes for ticket information. Additionally, users can access their booking history.
 
 ## Features
+### Login
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/b4c0bed3-39d4-4c3d-946e-3fcd8ab46fea)
+### Signup
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/1c669cd0-49e9-4a0f-b237-e66e6b82dde5)
 
 - User Registration and Authentication
 
