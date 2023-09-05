@@ -43,27 +43,27 @@ MySQL: Database
 ### Installation 
 1.Clone the repository: 
 
-git clone https://github.com/yourusername/movie-ticket-booking-system.git 
+  git clone https://github.com/yourusername/movie-ticket-booking-system.git 
 
-cd movie-ticket-booking-system 
+  cd movie-ticket-booking-system 
 
 2.Set up a virtual environment (recommended): 
 
-python -m venv venv source venv/bin/activate
+  python -m venv venv source venv/bin/activate
 
 3.Install dependencies: 
 
-pip install -r requirements.txt 
+  pip install -r requirements.txt 
 
 4.Create and configure your .env file with secret keys, database settings, and email service credentials. 
 
 5.Run database migrations:
 
- python manage.py migrate 
+   python manage.py migrate 
  
 6.Start the development server:
 
- python manage.py runserver 
+   python manage.py runserver 
  
 7.Access the application in your browser at http://localhost:8000.
 
