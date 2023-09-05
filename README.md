@@ -12,13 +12,25 @@ This project implements a Movie Ticket Booking System, allowing users to browse 
 
   Users can securely register for an account. 
   Users can log in using their email and password.
+
+### Browse Movies
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/81ba9e65-c063-4f6d-89e3-168ee4264e0e)
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/88455afc-5d9a-4e34-855d-22caa7c67b28)
+
 - Browse Movies 
 
    Movies are stored in the database and categorized by release year. Users can browse a list of available movies.
 
+### Showtime
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/f1a36255-96c7-4a55-a5e0-48dbc576f284)
+  
 - View Showtimes 
   
-   Users can view hard-coded showtimes (10AM, 2PM, 6PM, 10PM) for a selected movie. Showtimes display date, time, and theater location.
+   Users can view showtimes (10AM, 2PM, 6PM, 10PM) for a selected movie. Showtimes Showdate, time, and theater location.
+
+### Seat Selection
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/9834c80f-07b0-4a90-868c-831ce9f8be1e)
+
 - Seat Selection
 
      Users can select seats for the desired showtime. Multiple seats (up to 10) can be booked.
@@ -27,12 +39,23 @@ This project implements a Movie Ticket Booking System, allowing users to browse 
 
     Users can add selected seats to their booking cart. They can proceed to confirmation (no payment required).
 
+### Email
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/8ac994e0-c016-4fd7-b2b4-793c643089cf)
+
 - Booking Confirmation and Notifications 
 
     Upon successful booking, users receive an email confirmation. The confirmation email includes movie name, showtime, seat details, and a QR code. QR code contains essential booking information.
+
+### QR Code
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/db5f1768-cc1e-427d-8563-0a815efec027)
+
 - QR Code Scanning
 
      Users can scan the QR code from their confirmation email to retrieve ticket information. Scanning provides details such as movie name, showtime, and seat information.
+
+### Booking History
+![image](https://github.com/devdarsshan/Movie_Ticket_booking/assets/75977040/dbfa2b8e-ddc1-4bf3-bb39-331fb4fd8f09)
+
 - Booking History 
 
     Users have access to a booking history, listing past and upcoming bookings. They receive booking confirmation emails for reference.
